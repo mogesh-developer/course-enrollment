@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIFP | Maharishi Institute</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <div class="course-container">
+        <header>
+            <h1>Diploma in Food Production (DIFP)</h1>
+            <p>Step Into the Culinary World with Confidence</p>
+        </header>
+
+        <main>
+            <section class="course-details">
+                <h2>Course Overview</h2>
+                <p>This course teaches food preparation techniques, kitchen operations, and culinary science. Ideal for aspiring chefs and kitchen professionals.</p>
+
+                <h3>Course Duration</h3>
+                <p>1 Year</p>
+
+                <h3>Course Modules</h3>
+                <ul>
+                    <li>Basics of Culinary Arts</li>
+                    <li>Indian and Continental Cuisine</li>
+                    <li>Bakery and Confectionery</li>
+                    <li>Food Presentation & Plating</li>
+                    <li>Inventory and Store Management</li>
+                    <li>Kitchen Safety and Hygiene</li>
+                </ul>
+
+                <h3>Eligibility</h3>
+                <p>10th or 10+2 from a recognized board.</p>
+
+                <h3>Career Opportunities</h3>
+                <ul>
+                    <li>Commis Chef</li>
+                    <li>Line Cook</li>
+                    <li>Food Prep Assistant</li>
+                    <li>Kitchen Steward</li>
+                </ul>
+            </section>
+
+            <section class="cta-buttons"><form action="{{ url_for('apply_course') }}" method="POST">
+        <input type="hidden" name="course_title" value="DIFP - Food Production">
+        <button type="submit" class="btn primary">Apply Now</button>
+    </form>
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Maharishi Institute. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

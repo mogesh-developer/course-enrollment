@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diploma in Hospital Management (DHM) | Maharishi Institute</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <div class="course-container">
+        <header>
+            <h1>Diploma in Hospital Management (DHM)</h1>
+            <p>Shape Your Future in the Healthcare Industry</p>
+        </header>
+
+        <main>
+            <section class="course-details">
+                <h2>Course Overview</h2>
+                <p>This course will prepare students for a management role in the healthcare sector, focusing on the administration and operation of healthcare facilities such as hospitals, clinics, and medical institutions.</p>
+
+                <h3>Course Duration</h3>
+                <p>2 Years</p>
+
+                <h3>Course Modules</h3>
+                <ul>
+                    <li>Introduction to Healthcare Management</li>
+                    <li>Health Systems and Policies</li>
+                    <li>Human Resource Management in Healthcare</li>
+                    <li>Financial Management in Healthcare</li>
+                    <li>Healthcare Law and Ethics</li>
+                    <li>Marketing and Patient Care in Healthcare</li>
+                </ul>
+
+                <h3>Eligibility</h3>
+                <p>Minimum Qualification: High School (10+2) or equivalent in any stream.</p>
+
+                <h3>Job Opportunities</h3>
+                <p>Graduates can work as:</p>
+                <ul>
+                    <li>Hospital Administrator</li>
+                    <li>Healthcare Manager</li>
+                    <li>Medical Records Manager</li>
+                    <li>Healthcare Consultant</li>
+                    <li>Public Health Administrator</li>
+                </ul>
+            </section>
+
+            <section class="cta-buttons"><form action="{{ url_for('apply_course') }}" method="POST">
+        <input type="hidden" name="course_title" value="Diploma in Hospital Management (DHM)">
+        <button type="submit" class="btn primary">Apply Now</button>
+    </form>
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; {{ 2025 }} Maharishi Institute. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

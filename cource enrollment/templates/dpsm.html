@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPSM | Maharishi Institute</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <div class="course-container">
+        <header>
+            <h1>Diploma in Pre School Management (DPSM)</h1>
+            <p>Lead and Inspire in Early Childhood Education</p>
+        </header>
+
+        <main>
+            <section class="course-details">
+                <h2>Course Overview</h2>
+                <p>This diploma focuses on preparing educators and managers for preschools. Learn child psychology, curriculum planning, and school operations management.</p>
+
+                <h3>Course Duration</h3>
+                <p>1 Year</p>
+
+                <h3>Course Modules</h3>
+                <ul>
+                    <li>Early Childhood Development</li>
+                    <li>Classroom Management Techniques</li>
+                    <li>Child Psychology and Counseling</li>
+                    <li>Preschool Curriculum Planning</li>
+                    <li>Parent-Teacher Communication</li>
+                    <li>Preschool Administration</li>
+                </ul>
+
+                <h3>Eligibility</h3>
+                <p>10+2 or equivalent from a recognized board.</p>
+
+                <h3>Career Opportunities</h3>
+                <ul>
+                    <li>Preschool Teacher</li>
+                    <li>Childcare Center Manager</li>
+                    <li>Montessori Educator</li>
+                </ul>
+            </section>
+
+            <section class="cta-buttons"><form action="{{ url_for('apply_course') }}" method="POST">
+        <input type="hidden" name="course_title" value="DPSM - Pre School Management">
+        <button type="submit" class="btn primary">Apply Now</button>
+    </form>
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Maharishi Institute. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

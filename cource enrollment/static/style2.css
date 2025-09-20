@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+.course-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2em;
+    color: #007BFF;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+.course-details {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.course-details h2, h3 {
+    color: #444;
+}
+
+.course-details ul {
+    padding-left: 20px;
+}
+
+.cta-buttons {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.btn {
+    padding: 12px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #6c757d;
+    color: white;
+    display: inline-block;
+}
+
+.btn.primary {
+    background-color: #007BFF;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #888;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .course-container {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

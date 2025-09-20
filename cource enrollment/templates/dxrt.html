@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diploma in X-Ray Technology (DXRT) | Maharishi Institute</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <div class="course-container">
+        <header>
+            <h1>Diploma in X-Ray Technology (DXRT)</h1>
+            <p>Be a Part of Diagnostic Innovation</p>
+        </header>
+
+        <main>
+            <section class="course-details">
+                <h2>Course Overview</h2>
+                <p>This course provides students with the essential skills needed to operate X-ray machines and work in diagnostic imaging departments. It covers the theory, techniques, and safety aspects of X-ray technology.</p>
+
+                <h3>Course Duration</h3>
+                <p>2 Years</p>
+
+                <h3>Course Modules</h3>
+                <ul>
+                    <li>Introduction to Radiology</li>
+                    <li>X-Ray Imaging Techniques</li>
+                    <li>Radiographic Safety and Protection</li>
+                    <li>Medical Terminology and Anatomy</li>
+                    <li>Radiation Physics</li>
+                    <li>Clinical Practice and Procedures</li>
+                </ul>
+
+                <h3>Eligibility</h3>
+                <p>Minimum Qualification: High School (10+2) or equivalent with Science (Physics, Chemistry, Biology) stream.</p>
+
+                <h3>Job Opportunities</h3>
+                <p>Graduates can work as:</p>
+                <ul>
+                    <li>X-Ray Technician</li>
+                    <li>Radiologic Technologist</li>
+                    <li>Medical Imaging Specialist</li>
+                    <li>Radiology Assistant</li>
+                    <li>Healthcare Imaging Consultant</li>
+                </ul>
+            </section>
+
+            <section class="cta-buttons"><form action="{{ url_for('apply_course') }}" method="POST">
+        <input type="hidden" name="course_title" value="Diploma in X-Ray Technology (DXRT)">
+        <button type="submit" class="btn primary">Apply Now</button>
+    </form>
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; {{ 2025 }} Maharishi Institute. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

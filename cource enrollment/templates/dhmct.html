@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHMCT | Maharishi Institute</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <div class="course-container">
+        <header>
+            <h1>Diploma in Hotel Management & Catering Technology (DHMCT)</h1>
+            <p>Master the Art of Hospitality & Culinary Excellence</p>
+        </header>
+
+        <main>
+            <section class="course-details">
+                <h2>Course Overview</h2>
+                <p>This program combines theory and practical skills in hotel operations and culinary science. Learn about hospitality management, food production, housekeeping, and front office procedures.</p>
+
+                <h3>Course Duration</h3>
+                <p>2 Years</p>
+
+                <h3>Course Modules</h3>
+                <ul>
+                    <li>Food & Beverage Production and Service</li>
+                    <li>Front Office Operations</li>
+                    <li>Housekeeping Management</li>
+                    <li>Hotel Accounting</li>
+                    <li>Kitchen and Restaurant Planning</li>
+                    <li>Event and Banquet Management</li>
+                </ul>
+
+                <h3>Eligibility</h3>
+                <p>10+2 or equivalent from a recognized board.</p>
+
+                <h3>Career Opportunities</h3>
+                <ul>
+                    <li>Hotel Manager</li>
+                    <li>Executive Chef</li>
+                    <li>F&B Supervisor</li>
+                    <li>Resort Coordinator</li>
+                </ul>
+            </section>
+
+            <section class="cta-buttons"><form action="{{ url_for('apply_course') }}" method="POST">
+        <input type="hidden" name="course_title" value="DHMT - Hotel Management & Catering">
+        <button type="submit" class="btn primary">Apply Now</button>
+    </form>
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Maharishi Institute. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

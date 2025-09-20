@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maharishi Skill Training Institute</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f6f9;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      padding: 12px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    nav .logo span {
+      color: white;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-btn {
+      background-color: #f9fcff;
+      color: #333;
+      padding: 6px 14px;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #ddd;
+      color: #111;
+    }
+
+    .hamburger-menu {
+      display: none;
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        margin-top: 20px;
+        background-color: #333;
+        padding-bottom: 1em;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      nav ul li a {
+        padding: 10px;
+        display: block;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+
+      .nav-btn {
+        margin: 0 auto;
+        display: inline-block;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      height: 100vh;
+      background: url('static/images/bammer.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      padding: 2em;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin: 0.5em 0;
+      color: #faf3eb;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    /* Courses Section */
+    .section-alt {
+      padding: 4em 2em;
+      background: white;
+    }
+
+    .heading {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 1em;
+    }
+
+    .box-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+    }
+
+    .box {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 2em;
+      width: 300px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.1);
+    }
+
+    .box img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 1em;
+    }
+
+    .box h3 {
+      margin: 0.5em 0;
+      font-size: 1.5em;
+    }
+
+    .box h3 a {
+      text-decoration: none;
+      color: #333;
+    }
+
+    .box h3 a:hover {
+      text-decoration: underline;
+    }
+
+    .box p {
+      font-size: 0.9em;
+      color: #555;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+
+      color: white;
+      padding: 2em 0;
+      text-align: center;
+    }
+
+    footer .social-icons {
+      margin: 20px 0;
+    }
+
+    footer .social-icons a {
+      color: white;
+      font-size: 1.5em;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    footer .social-icons a:hover {
+      color: #f9fcff;
+    }
+
+    footer p {
+      margin-top: 20px;
+      font-size: 1em;
+    }
+    .apply-btn {
+  margin-top: 1rem;
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.apply-btn:hover {
+  background: #006ad1;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/maha.png') }}" alt="Maharishi Logo" />
+      <span>Maharishi Skill Training Institute</span>
+    </div>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+{% if session.username %}
+  <li><a href="/user_dashboard" class="nav-btn"><i class="fas fa-user-circle">  {{ session.username }}</i></a></li>
+  <li><a href="/logout" class="nav-btn">Logout</a></li>
+{% else %}
+  <li><a href="/login" class="nav-btn">Login</a></li>
+  <li><a href="/register" class="nav-btn">Register</a></li>
+{% endif %}
+
+
+    </ul>
+    <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div>
+      <h1>Empower Your Future with Maharishi</h1>
+      <p>Explore our expert-led diploma courses and build your career today.</p>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section id="courses" class="section-alt" data-aos="fade-up">
+    <h2 class="heading">Our Courses</h2>
+    <div class="box-container">
+      <!-- Example course cards, add more as needed -->
+      <div class="box course-card">
+        <img src="{{ url_for('static', filename='images/manager.png') }}" alt="DHM" />
+        <h3><a href="dhm.html">Diploma in Hospital Management (DHM)</a></h3>
+        <p>Learn the skills to manage and lead in the healthcare industry.</p>
+      </div>
+
+      <div class="box course-card">
+        <img src="{{ url_for('static', filename='images/nurse.png') }}" alt="DGDA" />
+        <h3><a href="{{ url_for('dgda_course') }}">Diploma in General Duty Nursing Assistant (DGDA)</a></h3>
+        <p>Prepare for a rewarding career as a nursing assistant with essential medical knowledge.</p>
+      </div>
+
+      <div class="box course-card">
+        <img src="{{ url_for('static', filename='images/2248432.png') }}" alt="DXRT" />
+        <h3><a href="{{ url_for('dxrt_course') }}">Diploma in X-Ray Technology (DXRT)</a></h3>
+        <p>Gain expertise in radiography and medical imaging techniques.</p>
+      </div>
+
+      <div class="box course-card">
+        <img src="{{ url_for('static', filename='images/6401475.png') }}" alt="DMLTA" />
+        <h3><a href="{{ url_for('dmlta_course') }}">Diploma in Medical Lab Technician Assistant (DMLTA)</a></h3>
+        <p>Become proficient in lab operations, testing, and diagnostics.</p>
+      </div>
+
+      <div class="box course-card">
+        <img src="{{ url_for('static', filename='images/4850909.png') }}" alt="DNA" />
+        <h3><a href="{{ url_for('dna') }}">Diploma in Nursing Assistance (DNA)</a></h3>
+        <p>Learn to provide essential care and support in healthcare settings.</p>
+      </div>
+
+      <div class="box course-card">
+        <img src="{{ url_for('static', filename='images/13911032.png') }}" alt="DHMT" />
+        <h3><a href="{{ url_for('dhmct') }}">DHMT - Hotel Management & Catering</a></h3>
+        <p>Prepare for a successful career in the hospitality and catering industries.</p>
+      </div>
+
+      <div class="box course-card">
+        <img src="{{ url_for('static', filename='images/12404215.png') }}" alt="DPSM" />
+        <h3><a href="{{ url_for('dpsm') }}">DPSM - Pre School Management</a></h3>
+        <p>Learn to manage and lead in the early childhood education sector.</p>
+      </div>
+
+      <div class="box course-card">
+        <img src="{{ url_for('static', filename='images/1683726.png') }}" alt="DCT" />
+        <h3><a href="{{ url_for('dct') }}">DCT - Catering Technology</a></h3>
+        <p>Gain the skills to thrive in the food service and catering industry.</p>
+      </div>
+
+      <div class="box course-card">
+        <img src="{{ url_for('static', filename='images/6041242.png') }}" alt="DIFP" />
+        <h3><a href="{{ url_for('difp') }}">DIFP - Food Production</a></h3>
+        <p>Master food production techniques and kitchen management.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>&copy; 2025 Maharishi Skill Training Institute. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    function toggleMenu() {
+      const menu = document.querySelector('nav ul');
+      menu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diploma in Nursing Assistance (DNA) | Maharishi Institute</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+</head>
+<body>
+    <div class="course-container">
+        <header>
+            <h1>Diploma in Nursing Assistance (DNA)</h1>
+            <p>🩺 Begin Your Journey into Compassionate Healthcare</p>
+        </header>
+
+        <main>
+            <section class="course-details">
+                <h2>Course Overview</h2>
+                <p>This diploma prepares students to provide basic care and assist registered nurses in hospitals, clinics, and home care. It covers patient hygiene, medical support, and health record maintenance.</p>
+
+                <h3>Course Duration</h3>
+                <p>1 Year</p>
+
+                <h3>Course Modules</h3>
+                <ul>
+                    <li>Basics of Nursing & Patient Care</li>
+                    <li>Human Anatomy and Physiology</li>
+                    <li>Medical Terminology</li>
+                    <li>Infection Control Procedures</li>
+                    <li>First Aid and Emergency Care</li>
+                    <li>Hospital and Clinical Training</li>
+                </ul>
+
+                <h3>Eligibility</h3>
+                <p>10th or 10+2 with a background in Science is preferred, but not mandatory.</p>
+
+                <h3>Job Opportunities</h3>
+                <ul>
+                    <li>Nursing Assistant</li>
+                    <li>Home Health Aide</li>
+                    <li>Hospital Attendant</li>
+                    <li>Community Health Worker</li>
+                    <li>Geriatric Care Assistant</li>
+                </ul>
+            </section>
+
+            <section class="cta-buttons"><form action="{{ url_for('apply_course') }}" method="POST">
+        <input type="hidden" name="course_title" value="Diploma in Nursing Assistance (DNA)">
+        <button type="submit" class="btn primary">Apply Now</button>
+    </form>
+    <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 Maharishi Institute. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

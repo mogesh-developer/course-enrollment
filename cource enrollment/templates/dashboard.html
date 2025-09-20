@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ username }}'s Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    /* ======= Navigation Bar ======= */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      padding: 12px 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    nav .logo span {
+      color: #fff;
+      font-size: 1.4em;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+
+    nav ul li a:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .nav-btn {
+      background-color: #ffffff;
+      color: #1e3c72;
+      padding: 6px 14px;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .nav-btn:hover {
+      background-color: #e0e0e0;
+      color: #000;
+    }
+
+    .hamburger-menu {
+      display: none;
+      font-size: 1.8em;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #1e3c72;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 1rem 0;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+        text-align: center;
+      }
+
+      .hamburger-menu {
+        display: block;
+      }
+    }
+
+    /* ======= Dashboard ======= */
+    .dashboard-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: white;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .dashboard-container h2 {
+      color: #1e90ff;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+      font-size: 1.8em;
+    }
+
+    .dashboard-container h3 {
+      margin-top: 1.5rem;
+      font-size: 1.4em;
+      color: #333;
+    }
+
+    .course-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1rem 0;
+      padding: 0.75rem 1rem;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      background-color: #fafafa;
+    }
+
+    .course-name {
+      font-weight: 500;
+      font-size: 1rem;
+    }
+
+    .remove-btn {
+      background: #ff4c4c;
+      border: none;
+      color: white;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      transition: background 0.3s;
+    }
+
+    .remove-btn:hover {
+      background: #d73737;
+    }
+
+    .logout-btn {
+      display: inline-block;
+      margin-top: 2rem;
+      background: #1e90ff;
+      color: white;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+
+    .empty-message {
+      color: #888;
+      font-style: italic;
+    }
+  </style>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('nav ul');
+      menu.classList.toggle('active');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="logo">
+      <img src="{{ url_for('static', filename='images/maha.png') }}" alt="Maharishi Logo" />
+      <span>Maharishi Skill Training Institute</span>
+    </div>
+    <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+      {% if session.username %}
+        <li><a href="/user_dashboard" class="nav-btn"><i class="fas fa-user-circle"></i> {{ session.username }}</a></li>
+        <li><a href="/logout" class="nav-btn">Logout</a></li>
+      {% else %}
+        <li><a href="/login" class="nav-btn">Login</a></li>
+        <li><a href="/register" class="nav-btn">Register</a></li>
+      {% endif %}
+    </ul>
+    <div class="hamburger-menu" onclick="toggleMenu()">&#9776;</div>
+  </nav>
+
+  <!-- Dashboard -->
+  <div class="dashboard-container">
+    <h2>Welcome, {{ username }}</h2>
+
+    <h3>Your Applied Courses:</h3>
+    {% if applied_courses %}
+      <ul>
+        {% for course in applied_courses %}
+        <li class="course-item">
+          <span class="course-name">{{ course }}</span>
+          <form method="POST" action="{{ url_for('remove_course') }}">
+            <input type="hidden" name="course_name" value="{{ course }}">
+            <button type="submit" class="remove-btn">
+              <i class="fas fa-trash-alt"></i> Remove
+            </button>
+          </form>
+        </li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p class="empty-message">You have not applied to any courses yet.</p>
+    {% endif %}
+
+    <a href="{{ url_for('logout') }}" class="logout-btn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </div>
+</body>
+</html>

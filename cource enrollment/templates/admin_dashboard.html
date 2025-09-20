@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1e90ff;
+      --primary-dark: #007acc;
+      --bg: #f4f6f9;
+      --card-bg: #fff;
+      --text-dark: #333;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      margin: 0;
+      padding: 2rem;
+      color: var(--text-dark);
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary);
+      margin-bottom: 2rem;
+    }
+
+    .dashboard-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .user-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .user-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .user-card h2 {
+      margin: 0 0 0.75rem 0;
+      font-size: 1.2rem;
+      color: var(--text-dark);
+    }
+
+    .courses {
+      list-style: none;
+      padding-left: 1rem;
+      margin: 0;
+    }
+
+    .courses li {
+      padding: 4px 0;
+      font-size: 0.95rem;
+      color: #555;
+      position: relative;
+    }
+
+    .courses li::before {
+      content: "•";
+      color: var(--primary);
+      position: absolute;
+      left: -1rem;
+    }
+
+    .no-courses {
+      font-style: italic;
+      color: #888;
+    }
+
+    .logout {
+      display: block;
+      text-align: center;
+      max-width: 180px;
+      margin: 2rem auto 0;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background 0.3s ease;
+    }
+
+    .logout:hover {
+      background: var(--primary-dark);
+    }
+
+    @media (max-width: 600px) {
+      .user-card {
+        padding: 1.2rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .logout {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1>Admin Dashboard</h1>
+
+    {% if users %}
+      {% for user in users %}
+        <div class="user-card">
+          <h2>User: {{ user.username }}</h2>
+          {% if user.applied_courses %}
+            <ul class="courses">
+              {% for c in user.applied_courses %}
+                <li>{{ c }}</li>
+              {% endfor %}
+            </ul>
+          {% else %}
+            <p class="no-courses">No courses applied.</p>
+          {% endif %}
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="no-courses" style="text-align:center;">No registered users yet.</p>
+    {% endif %}
+
+    <a class="logout" href="{{ url_for('admin_logout') }}">Admin Logout</a>
+  </div>
+</body>
+</html>
