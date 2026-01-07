@@ -1,0 +1,15 @@
+name: Daily Reminder Check
+
+on:
+  schedule:
+    - cron: "0 9 * * *"   # Every day at 9 AM (UTC)
+  workflow_dispatch:
+
+jobs:
+  reminder:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Call backend reminder API
+        run: |
+          curl -f "https://yourdomain.com/cron/reminder-check?token=${{ secrets.REMINDER_CRON_TOKEN }}"
